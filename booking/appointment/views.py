@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Appointments
 from django.views.generic import ListView, CreateView, DetailView, TemplateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from .forms import AppointmentForm
 
@@ -13,6 +13,7 @@ class HomeView(TemplateView):
 class AppointmentDetailView(LoginRequiredMixin, DetailView):
     model = Appointments
     context_object_name = "info"
+
 class UserPanel(LoginRequiredMixin, ListView):
     model = Appointments
     context_object_name = "context"
@@ -38,6 +39,3 @@ class CreateAppointmentView(LoginRequiredMixin, CreateView):
 
 
 
-class AdminPanelView:
-    'View where admin or staff can approve for pending appointments'
-    pass

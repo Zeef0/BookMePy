@@ -61,4 +61,4 @@ class Appointments(models.Model):
         return reverse('home')
 
     def __str__(self) -> str:
-        return f'{self.user} | {self.email} | {self.service} | {self.appointment_time}'
+        return f'{self.username} | {self.email} | {self.service} | {self.appointment_time}'

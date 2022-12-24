@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'appointment',
     'user',
-
+    'admin_rel',
+    
     'rest_framework'
 ]
 

@@ -1,0 +1,11 @@
+{% extends 'appointment/base.html' %}
+
+{% block main %}
+
+    {% for item in context %}
+        <h1>{{ item.username }}</h1>
+        <h2>{{ item.date }} | {{ item.appointment_time }}</h2>
+        <h4>{{ item.service }}</h4>
+        <h1>Is approved: {{ item.is_approved }}</h1>
+    {% endfor %}
+{% endblock %}
