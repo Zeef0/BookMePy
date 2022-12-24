@@ -10,6 +10,7 @@ class AdminPanelView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     queryset = Appointments.objects.all()
     template_name = 'admin_rel/dashboard.html'
     context_object_name = 'context'
+    queryset = Appointments.objects.all().filter(is_approved=False)
 
     def test_func(self):
         return self.request.user.is_staff and self.request.user.is_authenticated
