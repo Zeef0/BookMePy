@@ -1,0 +1,9 @@
+@import './base.css';
+
+.container {
+    border: 1px dotted firebrick;
+    width: 50vw;
+    margin: 1.5em auto;
+    padding: .8em 1.2em;
+    
+}

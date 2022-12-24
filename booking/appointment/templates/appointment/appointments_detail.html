@@ -1,0 +1,10 @@
+{% extends 'appointment/base.html'%}
+
+{% block main %}
+
+    <h1>User: {{ info.username}}</h1>
+    <small>{{ info.email }}</small>
+    <small>Date: {{ info.service }}</small>
+    <!-- <input type="date" name="" id="" value="{{ info.appointment_time }}"> -->
+    <h4>{{ info.appointment_time }}</h4>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'appointment/base.html' %}
+
+{% block main %}
+
+<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

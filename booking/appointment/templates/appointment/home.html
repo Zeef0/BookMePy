@@ -1,0 +1,21 @@
+{% extends 'appointment/base.html' %}
+{% load static %}
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'appointment/home.css' %}">
+{% endblock %}
+{% block main %}
+    <header>
+        <h1>Im a header</h1>
+    </header>
+
+    <main>
+        <div class="content">
+            main content
+        </div>
+    </main>
+
+    <footer>
+        Hello, I am a footer
+    </footer>
+{% endblock %}

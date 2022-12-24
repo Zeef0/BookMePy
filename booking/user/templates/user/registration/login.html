@@ -1,0 +1,14 @@
+{% extends 'appointment/base.html' %}
+
+{% block main %}
+    <div class="container">
+        <form action="" method="post">
+            <fieldset>
+                <legend><h2>Login</h2></legend>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

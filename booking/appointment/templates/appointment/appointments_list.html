@@ -1,0 +1,15 @@
+{% extends 'appointment/base.html' %}
+{% load static %}
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'appointment/list_view.css'%}">
+    {% endblock %}
+    {% block main %}
+    {% for item in context %}
+        <div class="container">
+            <h2>For: {{ item.username }}</h2>
+            <small>Date: {{ item.date }}, {{ item.appointment_time }}</small>
+
+            <h4>Service: {{ item.service}}</h4>
+        </div>
+    {% endfor %}
+    {% endblock %}
