@@ -45,7 +45,6 @@ class Appointments(models.Model):
     email = models.EmailField(max_length=100, help_text="Enter your email Address", null=True)
     service = models.CharField(max_length=35, choices=AVAILABLE_SERVICES, default='Doctor Care')
     appointment_time = models.CharField(max_length=7, choices=AVAILABLE_HOURS, default='9:30am')
-    created_at = models.DateTimeField(auto_now_add=True)
     date = models.DateField(default=timezone.now)
     is_approved = models.BooleanField(default=False)
 
@@ -54,7 +53,7 @@ class Appointments(models.Model):
     class Meta:
         verbose_name = 'Appointment'
         verbose_name_plural = 'Appointments'
-        ordering = ['-created_at', 'appointment_time']
+        ordering = ['-date', 'appointment_time']
 
     def get_absolute_url(self):
         # Redirect to home after creating a appointment object

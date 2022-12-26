@@ -25,6 +25,7 @@ class UserPanel(LoginRequiredMixin, ListView):
 class AppointmentsListView(ListView):
     model = Appointments
     context_object_name = 'context'
+    queryset = Appointments.objects.filter(is_approved=False)
 
 class CreateAppointmentView(LoginRequiredMixin, CreateView):
     model = Appointments

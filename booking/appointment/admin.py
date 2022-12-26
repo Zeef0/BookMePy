@@ -13,6 +13,6 @@ def reject_appointment(modeladmin, request, queryset):
 
 @admin.register(Appointments)
 class AppoinmentsAdmin(admin.ModelAdmin):
-    list_display = ['username', 'service', 'date', 'appointment_time', 'is_approved']
+    list_display = ['username', 'email', 'service', 'is_approved', 'date', 'appointment_time']
     ordering = ['-date', 'appointment_time']
     actions = [approve_appointment, reject_appointment]
