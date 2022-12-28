@@ -1,15 +1,23 @@
 {% extends 'appointment/base.html' %}
 {% load static %}
     {% block css %}
-    <link rel="stylesheet" href="{% static 'appointment/list_view.css'%}">
+    <link rel="stylesheet" href="{% static 'appointment/listview.css'%}">
+    <style>
+        
+    </style>
     {% endblock %}
     {% block main %}
     {% for item in context %}
         <div class="container">
             <h2>For: {{ item.username }}</h2>
             <small>Date: {{ item.date }}, {{ item.appointment_time }}</small>
-
+            {{ item.is_approved}}
             <h4>Service: {{ item.service}}</h4>
+            {% if item.is_approved %}
+            <div id="tick-mark"></div>
+            {% else %}
+            Pending
+            {% endif %}
         </div>
     {% endfor %}
     {% endblock %}

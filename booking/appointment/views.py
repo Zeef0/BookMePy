@@ -19,13 +19,13 @@ class UserPanel(LoginRequiredMixin, ListView):
     context_object_name = "context"
 
     def get_queryset(self):
-        qs = Appointments.objects.by_user(query=self.request.user)
+        qs = Appointments.objects.all().filter(username=self.request.user)
         return qs
 
 class AppointmentsListView(ListView):
     model = Appointments
     context_object_name = 'context'
-    queryset = Appointments.objects.filter(is_approved=False)
+    queryset = Appointments.objects.all()
 
 class CreateAppointmentView(LoginRequiredMixin, CreateView):
     model = Appointments

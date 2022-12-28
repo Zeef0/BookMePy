@@ -7,6 +7,9 @@
     padding: 0;
 }
 
+body {
+    background: #defa34;
+}
 
 h1, h2 {
     font-family: 'buffalo', 'Roboto', sans-serif;

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'user',
 
     'rest_framework',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -165,5 +166,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'user_panel'
 JAZZMIN_UI_TWEAKS = {
     'dark_theme': 'darkly',
-    # 'theme': 'sketchy'
+    'theme': 'slate'
 }
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
