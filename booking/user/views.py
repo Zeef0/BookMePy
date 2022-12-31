@@ -9,6 +9,6 @@ class CreateUserView(CreateView):
     model = User
     form_class = UserRegistrationForm
     template_name = 'user/register.html'
-    success_url = 'user/login'
+    success_url = '/user/login'
     # def form_valid(self, form) :
     #     form.save
