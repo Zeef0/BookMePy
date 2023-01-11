@@ -1,12 +1,12 @@
 {% extends 'appointment/base.html' %}
-
+{% load crispy_forms_tags%}
 {% block main %}
 
-<div class="container">
+<div class="container w-75 bg-secondary">
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success p-2 mt-2 rounded-1">Submit</button>
     </form>
 </div>
 {% endblock %}

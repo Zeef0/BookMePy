@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&display=swap');
+
+
+
+:root {
+
+    --bg-primary: #0a1118;
+    --primary-highlight: #233d45;
+    --bs-bd-bg: #FBF096;
+    --main-font: 'Poppins', 'Roboto', sans-serif;
+}
+
+
+
 body {
     background: #000;
+}
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--bg-primary);
+    z-index: 2;
+    width: 100%;
+    font-family: var(--bs-bd-bg);
+}
+
+#navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: whitesmoke;
+    z-index: 4;
+    /* display: ; */
+}
+.dropdown_nav__btnclose {
+    position: absolute;
+    top: 20px;
+    left: 16px;
 }

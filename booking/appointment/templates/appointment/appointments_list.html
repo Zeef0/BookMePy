@@ -1,23 +1,35 @@
 {% extends 'appointment/base.html' %}
 {% load static %}
     {% block css %}
-    <link rel="stylesheet" href="{% static 'appointment/listview.css'%}">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="{% static 'appointment/sus.css'%}">
+    <title>
+        {{ title }}
+    </title>
     {% endblock %}
     {% block main %}
+    
+    <nav class="nav navbar-nav bg-dark text-success">
+        <h1>{{ request.user }}</h1>
+        <ul>
+            <li><a href="{% url 'book_appointment' %}">Book New Appointment</a></li>
+            <li><a href="">adsd2</a></li>
+        </ul>
+        
+        
+    </nav>
     {% for item in context %}
         <div class="container">
-            <h2>For: {{ item.username }}</h2>
-            <small>Date: {{ item.date }}, {{ item.appointment_time }}</small>
-            {{ item.is_approved}}
-            <h4>Service: {{ item.service}}</h4>
-            {% if item.is_approved %}
-            <div id="tick-mark"></div>
-            {% else %}
-            Pending
-            {% endif %}
+            <a href="{% url 'appointment_detail' item.id %}" style="text-decoration: none;">
+                <h2 class="text-dark fw-bold p2">For: {{ item.username }}</h2>
+                <small>Date: {{ item.date }}, {{ item.appointment_time }}</small>
+                {{ item.is_approved}}
+                <h4>Service: {{ item.service}}</h4>
+                {% if item.is_approved %}
+                <div id="tick-mark"></div>
+                {% else %}
+                Pending
+                {% endif %}
+            </a>
         </div>
     {% endfor %}
     {% endblock %}

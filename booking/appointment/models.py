@@ -16,6 +16,12 @@ class AppointmentManager(Manager):
         lookups = Q(service=query)
         return self.filter(lookups)
 
+    def by_date(self, query=None):
+        if query is None or query == "":
+            return self.get_query().none()
+        lookup = Q(appointment_time=query) | Q(date=query)
+        return self.filter()
+
     def by_user(self, query=None):
         if query is None or query == "":
             return self.get_query().none()
@@ -49,15 +55,19 @@ class Appointments(models.Model):
     is_approved = models.BooleanField(default=False)
 
     objects = AppointmentManager()
+    admin = AdminAppointmentManager()
 
     class Meta:
         verbose_name = 'Appointment'
         verbose_name_plural = 'Appointments'
         ordering = ['-date', 'appointment_time']
 
+    # def save(self, *args, **kwargs):
+    #     super().save(args, kwargs)
+    #     email = self.request.user.
+
     def get_absolute_url(self):
-        # Redirect to home after creating a appointment object
-        return reverse('home')
+        return reverse('appointment_detail', kwargs={'pk': self.pk})
 
     def __str__(self) -> str:
         return f'{self.username} | {self.email} | {self.service} | {self.appointment_time}'

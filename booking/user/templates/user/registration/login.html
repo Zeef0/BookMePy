@@ -1,13 +1,14 @@
 {% extends 'appointment/base.html' %}
+{% load crispy_forms_tags%}
 
 {% block main %}
     <div class="container">
         <form action="" method="post">
-            <fieldset>
+            <fieldset class="form-group m-2">
                 <legend><h2>Login</h2></legend>
                 {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Submit</button>
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-outline-primary border rounded-2 p-2 mt-2">Login</button>
             </fieldset>
         </form>
     </div>

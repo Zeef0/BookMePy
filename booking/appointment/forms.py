@@ -16,7 +16,7 @@ class DateForm(forms.DateInput):
 class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointments
-        fields = ['email', 'service', 'date', 'appointment_time']
+        fields = ['username', 'email', 'service', 'date', 'appointment_time']
         widgets = {
             'date': DateForm()
         }
